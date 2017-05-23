@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root '/users/sign_in'
+
+
+  resources :friend_requests, only: [:create, :update, :destroy]
+  #resources :users
 
   devise_for :users
 end

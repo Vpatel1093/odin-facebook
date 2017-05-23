@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :friend_requests
   has_many :received_friend_requests, class_name: "FriendRequest", foreign_key: "friend_id"
-  has_many :requested_friendships, -> { where(friend_requests: { accepted: false }) }, 
+  has_many :requested_friendships, -> { where(friend_requests: { accepted: false }) },
            through: :received_friend_requests, source: :user
+
+  has_many :posts, dependent: :destroy
 end

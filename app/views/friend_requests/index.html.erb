@@ -1,0 +1,8 @@
+<% @friend_requests.each do |friend_request| %>
+  <p>
+    <% requester = User.find_by(friend_request.friend_id) %>
+    Friend request from: <%= link_to requester.email, requester %>
+    <%= link_to "Accept", friend_request_path(friend_request) %>
+    <%= link_to "Decline", friend_request_path(friend_request), method: :destroy %>
+  </p>
+<% end %>

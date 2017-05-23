@@ -1,4 +1,8 @@
 class FriendRequestsController < ApplicationController
+  def index
+    @friend_requests = current_user.received_friend_requests
+  end
+
   def create
     @friend_request = current_user.friend_request.build(friend_id: params[:friend_id])
     if @friend_request.save

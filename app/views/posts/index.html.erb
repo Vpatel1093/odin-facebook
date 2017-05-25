@@ -1,13 +1,5 @@
+<h1>Timeline</h1>
 <%= render 'shared/post_form' %>
-<% @posts.each do |post| %>
-  <li>
-    <p>
-      Author: <%= User.find_by(id: post.user_id).email %><br>
-      Content: <%= post.content %>
-      <!-- Comments
-      # Likes
-      Make into a feed!!!
-      -->
-    </p>
-  </li>
+<% if @posts.any? %>
+  <%= render @posts %>
 <% end %>

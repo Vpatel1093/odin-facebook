@@ -1,0 +1,12 @@
+<li>
+  <p>
+    Author: <%= User.find_by(id: post.user_id).email %><br>
+    Content: <%= post.content %>
+    <hr>
+    <!-- <%= link_to "Like" %>
+    <hr>
+    <%= render 'comments_form' %>
+    Comments:
+    <%= render 'post.comments' %> /-->
+  </p>
+</li>

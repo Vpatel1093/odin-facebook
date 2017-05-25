@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  def timeline
+    Post.where("user_id IN (?) OR user_id = ?", friend_ids, id)
+  end
 end

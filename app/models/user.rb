@@ -10,4 +10,5 @@ class User < ApplicationRecord
            through: :received_friend_requests, source: :user
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

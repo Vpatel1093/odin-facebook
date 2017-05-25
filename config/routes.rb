@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :posts, only: [:index, :create]
 
+  resources :profile, only: [:edit, :update]
 end

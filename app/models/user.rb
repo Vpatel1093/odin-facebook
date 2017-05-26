@@ -18,7 +18,14 @@ class User < ApplicationRecord
   after_create :build_empty_profile
 
   def timeline
-    Post.where("user_id IN (?) OR user_id = ?", accepted_friends_ids, id)
+    Post.where("user_id IN (?) OR user_id = ?", accepted_friend_ids, id)
+  end
+
+  def full_name
+    unless profile.first_name.blank? || profile.last_name.blank?
+      return "#{profile.first_name} #{profile.last_name}"
+    end
+    email
   end
 
   private

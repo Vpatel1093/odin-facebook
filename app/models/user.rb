@@ -28,6 +28,14 @@ class User < ApplicationRecord
     email
   end
 
+  def friends_with?(different_user)
+    accepted_friends.include?(user)
+  end
+
+  def pending_friends?(different_user)
+    requested_friendships.include?(different_user)
+  end
+
   private
 
     def build_empty_profile

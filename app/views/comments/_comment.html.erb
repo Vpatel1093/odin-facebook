@@ -1,5 +1,6 @@
 <li>
-  <p><%= post.content %></p>
+  <p><%= comment.content %></p>
+  <p><%= link_to "Like", comment_likes_path(comment, @like), method: :post %></p><span><%= comment.likes.size %></span>
   <p><%= link_to comment.user.full_name, user_path(comment.user) %><br>
      Commented <%= time_ago_in_words(comment.created_at) %> ago.</p>
 </li>

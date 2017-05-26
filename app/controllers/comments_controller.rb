@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
 
     if @comment.save
-      redirect_to posts_path, notice: "Successfully commented"
+      redirect_to posts_path, notice: "Commented!"
     else
       redirect_to posts_path, alert: "Error commenting"
     end

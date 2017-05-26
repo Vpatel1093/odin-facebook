@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
 
   after_create :build_empty_profile
+  after_create :send_welcome_email
 
   def timeline
     Post.where("user_id IN (?) OR user_id = ?", accepted_friend_ids, id)
@@ -40,5 +41,9 @@ class User < ApplicationRecord
 
     def build_empty_profile
       Profile.create!(user: self)
+    end
+
+    def send_welcome_email
+      UserMailer.welcome_email(self).deliver
     end
 end

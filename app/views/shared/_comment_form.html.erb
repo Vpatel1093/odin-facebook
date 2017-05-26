@@ -1,0 +1,5 @@
+<%= form_for post.comments.build do |f| %>
+  <%= f.hidden_field :post_id %>
+  <%= f.text_field :content, placeholder: "Comment here!" %>
+  <%= f.submit "Comment" %>
+<% end %>

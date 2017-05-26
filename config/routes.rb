@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :friend_requests, only: [:index, :create, :update, :destroy]
   resources :users, only: [:index, :show]
   resources :posts, only: [:index, :create]
+  resources :comments, only: [:create]
 
   resources :profile, only: [:edit, :update]
 end

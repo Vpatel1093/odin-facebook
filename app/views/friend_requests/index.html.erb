@@ -1,8 +1,6 @@
-<% @friend_requests.each do |friend_request| %>
-  <p>
-    <% requester = User.find_by(friend_request.friend_id) %>
-    Friend request from: <%= link_to requester.email, requester %>
-    <%= link_to "Accept", friend_request_path(friend_request) %>
-    <%= link_to "Decline", friend_request_path(friend_request), method: :destroy %>
-  </p>
+<h1>Friend Requests</h1>
+<% if @friend_requests.any? %>
+  <% render 'friend_requests' %>
+<% else %>
+  <h3>No new friend requests</h3>
 <% end %>

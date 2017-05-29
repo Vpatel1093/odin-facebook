@@ -30,7 +30,7 @@ class User < ApplicationRecord
   end
 
   def friends_with?(different_user)
-    accepted_friends.include?(user)
+    accepted_friends.include?(self)
   end
 
   def pending_friends?(different_user)

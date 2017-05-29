@@ -9,6 +9,7 @@
             Friends
           <% elsif current_user.pending_friends?(user) %>
             Pending
+          <% elsif current_user.id == user.id %>
           <% else %>
             <%= link_to "Add friend", friend_requests_path(friend_id: user.id), method: :post %>
           <% end %>

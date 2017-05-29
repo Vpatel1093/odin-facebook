@@ -1,10 +1,23 @@
-<ul>
-  <% if user_signed_in? %>
-    <li><%= link_to "Friend Requests", friend_requests_path %>
-       (<%= current_user.received_friend_requests.count %>)</li>
-    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-  <% else %>
-    <li><%= link_to "Sign Up", new_user_registration_path %> or
-    <%= link_to "Sign In", new_user_session_path %></li>
-  <% end %>
-</ul>
+<nav>
+  <%= link_to "odin-facebook", root_path %>
+  <ul>
+    <% if user_signed_in? %>
+      <li><%= link_to "Friend Requests", friend_requests_path %>
+         (<%= current_user.received_friend_requests.count %>)</li>
+      <li><%= link_to "Find Friends", users_path %></li>
+      <li>
+        <a href="#" data-toggle="dropdown">
+          Account
+        </a>
+        <ul>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><%= link_to "Settings", edit_user_registration_path %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </li>
+    <% else %>
+      <li><%= link_to "Sign Up", new_user_registration_path %> or
+      <%= link_to "Sign In", new_user_session_path %></li>
+    <% end %>
+  </ul>
+</nav>

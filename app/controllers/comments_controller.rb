@@ -9,6 +9,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
+    @comment.destroy
+    flash[:notice] = "Comment deleted."
+    redirect_to :back
+  end
 
   private
 

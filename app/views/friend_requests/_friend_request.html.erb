@@ -1,6 +1,6 @@
 <p>
   <% requester = User.find_by(friend_request.friend_id) %>
-  Friend request from: <%= link_to requester.email, requester %>
-  <%= link_to "Accept", friend_request_path(friend_request) %>
-  <%= link_to "Decline", friend_request_path(friend_request), method: :destroy %>
+  Friend request from: <%= link_to requester.full_name, requester %>
+  <%= link_to "Accept", friend_request_path(id: friend_request.id), method: "put" %>
+  <%= link_to "Decline", friend_request_path(id: friend_request.id), method: :delete %>
 </p>

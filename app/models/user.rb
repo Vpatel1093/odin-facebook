@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   has_one :profile, dependent: :destroy
 
@@ -35,6 +36,10 @@ class User < ApplicationRecord
 
   def pending_friends?(different_user)
     requested_friendships.include?(different_user)
+  end
+
+  def has_liked_this?(likeable)
+    likeable.likes.where(user_id: id).blank? ? false : true
   end
 
   private

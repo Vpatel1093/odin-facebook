@@ -1,6 +1,11 @@
 <li>
   <p><%= comment.content %></p>
-  <p><%= link_to "Like", comment_likes_path(comment, @like), method: :post %></p><span><%= comment.likes.size %></span>
+  <p><% if current_user.has_liked_this?(comment) %>
+       <%= link_to "Unlike", comment_like_path(post, @like, id: current_user.id), method: :delete %>
+     <% else %>
+       <%= link_to "Like", comment_likes_path(comment, @like), method: :post %>
+     <% end %>
+     <span> <%= pluralize(comment.likes.size, 'like') %></span></p>
   <p><% if comment.user.id == current_user.id %>
      <%= link_to "Delete", comment_path(id: comment.id), method: :delete %>
      <% end %></p>

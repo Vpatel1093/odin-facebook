@@ -41,6 +41,13 @@ class User < ApplicationRecord
     likeable.likes.where(user_id: id).blank? ? false : true
   end
 
+  def self.from_omniauth(auth)
+    where(provider: auth_provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
+
   private
 
     def build_empty_profile

@@ -1,9 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+post1:
+  content: Lorem ipsum
+  user: example1
 
-one:
-  content: MyText
-  user: one
+post2:
+  content: Dolor sit amet
+  user: example2
 
-two:
-  content: MyText
-  user: two
+post3:
+  content: consectetur adipiscing elit
+  user: example3

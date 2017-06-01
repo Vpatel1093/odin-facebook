@@ -50,7 +50,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "dependents should be destroyed with the user" do
-    @user.save
     @user.posts.create!(content: "lorem ipsum")
     assert_difference 'Post.count', -1 do
       @user.destroy

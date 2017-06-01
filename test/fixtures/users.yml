@@ -1,14 +1,15 @@
 example1:
   email: example1@example.com
-  password: example
-  password_confirmation: example
+  encrypted_password: <%= Devise::Encryptor.digest(User, "foobar") %>
+  created_at: <%= Time.zone.now %>
+
 
 example2:
   email: example2@example.com
-  password: example
-  password_confirmation: example
+  encrypted_password: <%= Devise::Encryptor.digest(User, "foobar") %>
+  created_at: <%= Time.zone.now %>
 
 example3:
   email: example3@example.com
-  password: example
-  password_confirmation: example
+  encrypted_password: <%= Devise::Encryptor.digest(User, "foobar") %>
+  created_at: <%= Time.zone.now %>

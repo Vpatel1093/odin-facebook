@@ -1,9 +1,3 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-#one:
-#  user: one
-#  likeable: one
-
-#two:
-#  user: two
-#  likeable: two
+like1:
+  user: example1
+  likeable: post1

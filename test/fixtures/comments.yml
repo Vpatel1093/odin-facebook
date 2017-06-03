@@ -1,0 +1,9 @@
+comment1:
+  content: I'm commenting on my own post!
+  user: example1
+  post: post1
+
+comment2:
+  content: I'm commenting on example2's post!
+  user: example1
+  post: post2

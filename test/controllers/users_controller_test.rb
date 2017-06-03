@@ -27,12 +27,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete users_path(@user)
     end
   end
-<<<<<<< 194e9bf05787e28784b2dcc2fb79ce68ab0e932f
-=======
 
   test "should have access to own timeline" do
     sign_in @user
     get user_path(@user)
   end
->>>>>>> finish users controller test
 end

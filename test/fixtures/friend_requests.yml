@@ -2,3 +2,8 @@ one:
   user: example1
   friend: example3
   accepted: true
+
+two:
+  user: example2
+  friend: example1
+  accepted: false

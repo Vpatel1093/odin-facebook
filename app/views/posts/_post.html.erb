@@ -1,9 +1,9 @@
 <li>
   <p><%= post.content %></p>
   <p><% if current_user.has_liked_this?(post) %>
-       <%= link_to "Unlike", post_like_path(post, @like, id: current_user.id), method: :delete %>
+       <%= link_to "Unlike", post_like_path(post, id: current_user.id), method: :delete %>
      <% else %>
-       <%= link_to "Like", post_likes_path(post, @like), method: :post %>
+       <%= link_to "Like", post_likes_path(post), method: :post %>
      <% end %>
      <span> <%= pluralize(post.likes.size, 'like') %></span></p>
   <p><% if post.user.id == current_user.id %>

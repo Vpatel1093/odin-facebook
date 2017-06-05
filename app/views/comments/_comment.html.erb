@@ -1,5 +1,5 @@
 <li>
-  <p><%= comment.content %></p>
+  <p><br><%= comment.content %></p>
   <p><% if current_user.has_liked_this?(comment) %>
        <%= link_to "Unlike", comment_like_path(post, id: current_user.id), method: :delete %>
      <% else %>

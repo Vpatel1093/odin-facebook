@@ -7,6 +7,7 @@ end
 
 ruby '2.3.0'
 
+gem 'bootstrap-sass'
 gem 'faker'
 gem 'omniauth-facebook'
 gem 'figaro'

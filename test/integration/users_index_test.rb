@@ -16,8 +16,8 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     assert_match @another_user.full_name, response.body
     assert_select 'a[href=?]', friend_requests_path(friend_id: @another_user.id), text: 'Add friend'
     assert_match @friend_of_user.full_name, response.body
-    assert_match 'Friends', response.body
+    assert_select 'td', text: 'Friends'
     assert_match @pending_user.full_name, response.body
-    assert_select 'Pending', response.body
+    assert_select 'td', text: 'Pending'
   end
 end

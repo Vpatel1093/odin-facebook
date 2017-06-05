@@ -5,9 +5,14 @@ class User < ApplicationRecord
 
   has_many :friend_requests
   has_many :received_friend_requests, class_name: "FriendRequest", foreign_key: "friend_id", dependent: :destroy
-  has_many :requested_friendships, -> { where(friend_requests: { accepted: false }) },
+
+  has_many :added_friends, -> { where(friend_requests: {accepted: true}) }, through: :friend_requests, source: :friend
+  has_many :received_friends, -> { where(friend_requests: {accepted: true}) }, through: :received_friend_requests, source: :user
+
+  has_many :requested_friends, -> { where(friend_requests: { accepted: false }) },
            through: :received_friend_requests, source: :user
-  has_many :accepted_friends, -> { where(friend_requests: {accepted: true}) }, through: :friend_requests, source: :friend
+  has_many :pending_friends,   -> { where(friend_requests: { accepted: false }) },
+           through: :friend_requests, source: :friend
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -19,7 +24,7 @@ class User < ApplicationRecord
   after_create :send_welcome_email
 
   def timeline
-    Post.where("user_id IN (?) OR user_id = ?", accepted_friend_ids, id)
+    Post.where("user_id IN (?) OR user_id = ?", added_friend_ids, id) | Post.where("user_id IN (?) OR user_id = ?", received_friend_ids, id)
   end
 
   def full_name
@@ -30,11 +35,11 @@ class User < ApplicationRecord
   end
 
   def friends_with?(different_user)
-    accepted_friends.include?(self)
+    (added_friends | received_friends).include?(self)
   end
 
   def pending_friends?(different_user)
-    requested_friendships.include?(different_user)
+    (requested_friends | pending_friends).include?(different_user)
   end
 
   def has_liked_this?(likeable)

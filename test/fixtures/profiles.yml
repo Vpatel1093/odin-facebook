@@ -12,3 +12,8 @@ example3:
   first_name: test
   last_name: user
   user: example3
+
+example4:
+  first_name:
+  last_name:
+  user: example4

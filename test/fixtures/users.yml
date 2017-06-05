@@ -13,3 +13,8 @@ example3:
   email: example3@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, "foobar") %>
   created_at: <%= Time.zone.now %>
+
+example4:
+  email: example4@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, "foobar") %>
+  created_at: <%= Time.zone.now %>

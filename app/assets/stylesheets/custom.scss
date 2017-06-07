@@ -1,6 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins, variables, etc. */
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 /* universal */
 body {
   padding-top: 10px;
@@ -28,11 +35,42 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom .navbar-nav > li > a {
   color: #fff;
   float: left;
-  margin-right: -10px;
 }
 
-.navbar-custom .navbar-nav > li > a:hover {
+.dropdown-menu > li > a {
+  color: #fff;
+  
+}
+
+.navbar-custom .navbar-nav > p {
+	float:left;
+	margin-bottom: 5px;
+	line-height: 12px;
+}
+
+.not_signed_in {
+	margin-left: 450px;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:active {
   background-color: #355089;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+  background-color: #355089 !important;
+}
+
+.dropdown > ul > li > a {
+  background-color: #fff;
+  color: #000;
+  font-weight: 200;
+}
+
+.dropdown > ul > li > a:hover {
+  background-color: #3B5998;
+  color: #fff;
+  font-weight: 500;
 }
 
 .navbar-custom .navbar-nav > .dropdown > a .caret {
@@ -41,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #logo {
 	float: left;
-	margin-right: 140px;
+	margin-right: 100px;
 	font-size: 1.7em;
 	color: #fff;
 	letter-spacing: -1px;

@@ -10,7 +10,7 @@
 
 /* universal */
 body {
-  padding-top: 10px;
+  padding-top: 60px;
 }
 
 section {
@@ -85,4 +85,18 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: -1px;
 	padding-top: 9px;
 	font-weight: bold;
+}
+
+/* forms */
+.form-control {
+	width: 50%;
+}
+
+.btn-primary {
+  background-color: #3B5998;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #355089;
 }

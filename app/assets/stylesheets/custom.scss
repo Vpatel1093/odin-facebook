@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 }
 
-/* forms */
+/* post forms */
 .form-control {
 	width: 50%;
 }
@@ -99,4 +99,53 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover {
   background-color: #355089;
+}
+
+/* comment forms */
+.new-comment {
+	display: inline-block;
+}
+
+.comment-form-gravatar {
+	display: inline-block;
+	float: left;
+	margin-right: 5px;
+}
+
+.comment-form {
+	display: inline-block;
+	float: left;
+}
+
+/* comments */
+.comment-container {
+	overflow: hidden;
+}
+
+.comment-gravatar {
+	float: left;
+	margin-right: 5px;
+}
+
+.name-and-comment > p {
+	display: inline-block;
+	margin-top: -10px;
+}
+
+.name-and-comment {
+	display: block;
+	float: left;
+	vertical-align: top;
+	margin-bottom: -10px;
+}
+
+.likes-and-time > p {
+	display: inline-block;
+	margin-top: -10px;
+}
+
+.likes-and-time {
+	display: block;
+	float: left;
+	vertical-align: top;
 }

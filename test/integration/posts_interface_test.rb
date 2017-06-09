@@ -12,7 +12,6 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
   test "post interface" do
     sign_in @user
     get posts_path
-    assert_select 'h1', text: 'Timeline'
     assert_select 'a[href=?]', post_likes_path(@friend_of_user_post)
     assert_select 'a[href=?]', post_likes_path(@not_friend_of_user_post), count: 0
     assert_select 'a', text: 'Delete'

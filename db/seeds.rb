@@ -4,7 +4,7 @@ user = User.create!(email:                 "exampleuser@example.com",
 
 # Create users and make friends with user
 10.times do |n|
-  email = "example-#{n+1}@example.com"
+  email = "example-#{n+1}@railstutorial.org"
   password = "foobar"
   password_confirmation = "foobar"
   new_user = User.create!(email: email,

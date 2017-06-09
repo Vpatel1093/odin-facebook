@@ -117,9 +117,18 @@ h1, h2, h3, h4, h5, h6 {
 	float: left;
 }
 
-/* comments */
+/* posts and comments */
+.post-container {
+	overflow: hidden;
+}
+
 .comment-container {
 	overflow: hidden;
+}
+
+.post-gravatar {
+	float: left;
+	margin-right: 5px;
 }
 
 .comment-gravatar {

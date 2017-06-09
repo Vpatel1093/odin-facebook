@@ -1,13 +1,18 @@
-<li>
-  <p><br><%= link_to post.user.full_name, user_path(post.user) %><br>
-     Posted <%= time_ago_in_words(post.created_at) %> ago.</p>
-  <p><%= post.content %></p>
-  <p><% if current_user.has_liked_this?(post) %>
-       <%= link_to "Unlike", post_like_path(post, id: current_user.id), method: :delete %>
-     <% else %>
-       <%= link_to "Like", post_likes_path(post), method: :post %>
-     <% end %>
-     <span> <%= pluralize(post.likes.size, 'like') %></span></p>
+<li class="post-container">
+  <p class="post-gravatar"><%= gravatar_for(post.user, size:30) %></p>
+	<div class="name-and-comment">
+  	<p><%= link_to post.user.full_name, user_path(post.user) %></p>
+	  <p><%= post.content %></p>
+  </div><br>
+  <div class="likes-and-time">
+		<p><% if current_user.has_liked_this?(post) %>
+		     <%= link_to "Unlike", post_like_path(post, id: current_user.id), method: :delete %>
+		   <% else %>
+		     <%= link_to "Like", post_likes_path(post), method: :post %>
+		   <% end %>
+		   <span> &#183; <%= pluralize(post.likes.size, 'like') %></span></p>
+  	<p> &#183; Posted <%= time_ago_in_words(post.created_at) %> ago.</p>
+  </div>
   <p><% if post.user.id == current_user.id %>
        <%= link_to "Delete", post_path(id: post.id), method: :delete %>
      <% end %></p>

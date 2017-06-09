@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-form {
 	display: table;
 	margin: 0 auto;
-	width: 45%;
+	width: 50%;
 }
 
 .btn-primary {
@@ -132,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 15px;
 	padding-right: 15px;
 	border: 1px solid #e1e2e3;
+	border-radius: 2px;
 }
 
 .post-containter + .post-container {
@@ -175,4 +176,31 @@ h1, h2, h3, h4, h5, h6 {
 	display: block;
 	float: left;
 	vertical-align: top;
+}
+
+/* users index page */
+.users-table-row {
+	margin-bottom: 15px;
+	background: #fff;
+	border: 1px solid #e1e2e3;
+	border-radius: 2px;
+}
+
+.users-table-row + .users-table-row {
+	margin-top: 15px;
+}
+
+.users-index > table {
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+
+#user-name {
+	width: 250px;
+	padding-left: 15px;
+}
+
+#friend-status {
+	width: 75px;
+	text-align: center;
 }

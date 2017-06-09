@@ -1,4 +1,6 @@
-<%= form_for @post, :html => { :class => "form-horizontal center" }  do |f| %>
-  <%= f.text_area :content, placeholder: "Create your post here!", class: "form-control" %>
-  <%= f.submit "Post", class: "btn-primary" %>
-<% end %>
+<div class="post-form">
+	<%= form_for @post, :html => { :class => "form-horizontal center" }  do |f| %>
+		<%= f.text_area :content, placeholder: "Create your post here!", class: "form-control" %>
+		<%= f.submit "Post", class: "btn-primary" %>
+	<% end %><br>
+</div>

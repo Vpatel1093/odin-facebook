@@ -11,6 +11,7 @@
 /* universal */
 body {
   padding-top: 60px;
+  background-color: #e9ebee;
 }
 
 section {
@@ -88,22 +89,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* post forms */
-.form-control {
-	width: 50%;
+.post-form {
+	display: table;
+	margin: 0 auto;
+	width: 45%;
 }
 
 .btn-primary {
-  background-color: #3B5998;
+  background-color: #4267b2;
   color: #fff;
+  font-weight: 650;
+  border: none;
+  border-radius: 2px;
 }
 
 .btn-primary:hover {
-  background-color: #355089;
+  background-color: #365899;
 }
 
 /* comment forms */
-.new-comment {
+.comment-form {
 	display: inline-block;
+	float: left;
+	clear: left;
+	margin-left: 35px;
 }
 
 .comment-form-gravatar {
@@ -112,18 +121,27 @@ h1, h2, h3, h4, h5, h6 {
 	margin-right: 5px;
 }
 
-.comment-form {
-	display: inline-block;
-	float: left;
-}
-
 /* posts and comments */
 .post-container {
 	overflow: hidden;
+	clear: left;
+	background-color: #fff;
+	display: table;
+	margin: 0 auto;
+	width: 40%;
+	margin-bottom: 15px;
+	padding-right: 15px;
+	border: 1px solid #e1e2e3;
+}
+
+.post-containter + .post-container {
+	margin-top:10px;
 }
 
 .comment-container {
-	overflow: hidden;
+	overflow: auto;
+	margin-left: 35px;
+	clear: left;
 }
 
 .post-gravatar {

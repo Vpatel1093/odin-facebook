@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dropdown-menu > li > a {
   color: #fff;
-  
+
 }
 
 .navbar-custom .navbar-nav > p {
@@ -198,12 +198,17 @@ h1, h2, h3, h4, h5, h6 {
 #user-name {
 	width: 250px;
 	padding-left: 15px;
+	font-weight: 500;
 }
 
 
 #friend-status {
 	width: 75px;
 	text-align: center;
+}
+
+#friend-status > p > a {
+	color: #fff !important;
 }
 
 /* user show page */

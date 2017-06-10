@@ -13,9 +13,9 @@
 		   <span> &#183; <%= pluralize(post.likes.size, 'like') %></span></p>
   	<p> &#183; Posted <%= time_ago_in_words(post.created_at) %> ago.</p>
   </div>
-  <p><% if post.user.id == current_user.id %>
-       <%= link_to "Delete", post_path(id: post.id), method: :delete %>
-     <% end %></p>
+  <% if post.user.id == current_user.id %>
+    <p>&nbsp;<%= link_to "Delete", post_path(id: post.id), method: :delete %></p>
+  <% end %>
   <%= render post.comments %>
   <p><%= render 'shared/comment_form', post: post %></p>
 </div>

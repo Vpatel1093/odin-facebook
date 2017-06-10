@@ -11,9 +11,9 @@
 		     <%= link_to "Like", comment_likes_path(comment), method: :post %>
 		   <% end %>
 		   <span> &#183; <%= pluralize(comment.likes.size, 'like') %></span></p>
-		<p> &#183; Commented <%= time_ago_in_words(comment.created_at) %> ago</p>
+		<p> &#183; Commented <%= time_ago_in_words(comment.created_at) %> ago.</p>
 	</div>
-  <p><% if comment.user.id == current_user.id %>
-       <span> &#183; </span><%= link_to "Delete", comment_path(id: comment.id), method: :delete %>
-     <% end %></p>
+  <% if comment.user.id == current_user.id %>
+    <p>&nbsp;<%= link_to "Delete", comment_path(id: comment.id), method: :delete %></p>
+  <% end %>
 </li>
